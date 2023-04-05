@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.center-div {
+  margin: auto;
+  width: 30%;
+}
