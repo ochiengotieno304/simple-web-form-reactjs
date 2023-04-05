@@ -12,6 +12,7 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [issue, setIssue] = useState("Query");
+  const [comment, setComment] = useState("");
 
   const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -23,7 +24,10 @@ const Form = () => {
 
   const handleIssue = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setIssue(event.target.value);
-    console.log(event.target.value);
+  };
+
+  const handleComment = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setComment(event.target.value);
   };
 
   const handleSubmit = (event: { preventDefault: () => void }): void => {
@@ -85,7 +89,9 @@ const Form = () => {
             id="comment"
             placeholder="Leave a comment..."
             required={true}
+            value={comment}
             rows={4}
+            onChange={handleComment}
           />
         </div>
         <Button type="submit">Submit</Button>
