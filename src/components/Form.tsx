@@ -1,12 +1,6 @@
-import {
-  TextInput,
-  Label,
-  Button,
-  Dropdown,
-  Textarea,
-  Select,
-} from "flowbite-react";
-import { ReactNode, useState } from "react";
+import { TextInput, Label, Button, Textarea, Select } from "flowbite-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -32,7 +26,6 @@ const Form = () => {
 
   const handleSubmit = (event: { preventDefault: () => void }): void => {
     event.preventDefault();
-    alert(`The name you entered was: ${name}`);
   };
 
   return (
@@ -95,6 +88,9 @@ const Form = () => {
           />
         </div>
         <Button type="submit">Submit</Button>
+        <Link to="/details" state={{ some: "value", hello: "world" }}>
+          Details
+        </Link>
       </form>
     </>
   );
